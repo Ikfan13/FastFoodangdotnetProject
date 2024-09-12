@@ -1,0 +1,35 @@
+<div class="mar">
+<div class="orders-container">
+  <h2>All Orders</h2>
+  <div *ngIf="loading">Loading...</div>
+  <div *ngIf="error">{{ error }}</div>
+  <div *ngIf="!loading && orders.length > 0">
+    <div class="order-card-container">
+      <div *ngFor="let order of orders" class="order-card">
+        <div class="order-header">
+          <div *ngFor="let item of order.orderItems" class="order-item">
+            <img [src]="item.imgUrl || 'default-image-url.jpg'" alt="{{ item.name }}" class="order-image" />
+            <div class="order-info">
+              <p><strong>Item Name:</strong> {{ item.name }}</p>
+              <p><strong>Order Number:</strong> {{ order.orderNumber }}</p>
+              <p><strong>Total Price:</strong> ${{ order.totalPrice }}</p>
+              <p><strong>Order Time:</strong> {{ order.orderTime | date: 'short' }}</p>
+              <p><strong>Status:</strong> 
+                <span [ngClass]="{
+                  'order-status-pending': order.status === 'Pending',
+                  'order-status-confirmed': order.status === 'Confirmed'
+                }">{{ order.status }}</span>
+              </p>
+              <button (click)="updateOrderStatus(order.id, 'Confirmed')">Confirm</button>
+              <button (click)="updateOrderStatus(order.id, 'Declined')">Decline</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noOrders>
+    <p>No orders found.</p>
+  </ng-template>
+</div>
+</div>

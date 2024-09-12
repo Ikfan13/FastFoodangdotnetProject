@@ -1,0 +1,185 @@
+/* Container and Layout */
+.mar {
+  background: url('/assets/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40;
+  color: white;
+  padding: 10px;
+}
+
+.header .button-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-button, .logout-button, .show-profile-button, .view-cart-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.menu-button:hover, .logout-button:hover, .show-profile-button:hover, .view-cart-button:hover {
+  background-color: #0056b3;
+}
+
+/* Main Content Layout */
+.main-content {
+  display: flex;
+  flex: 1;
+  height: 100%; /* Full height layout */
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-bottom: 10px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #007bff;
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+}
+
+.nav-menu a:hover {
+  background-color: #e9ecef;
+}
+
+/* Food Items Section */
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.food-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; /* Align items to the left */
+}
+
+.food-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  width: calc(33% - 20px); /* 3 items per row */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: calc(33% - 20px); /* Ensures cards don't exceed this width */
+}
+
+.food-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.food-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.food-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.food-info h3 {
+  margin: 0 0 10px;
+}
+
+.food-info p {
+  margin: 5px 0;
+}
+
+.add-to-cart-button, .order-now-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-to-cart-button:hover, .order-now-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.order-now-button {
+  background-color: #28a745;
+}
+
+.order-now-button:hover {
+  background-color: #218838;
+}
+
+.order-now-button:active {
+  background-color: #1e7e34;
+}
+
+.add-to-cart-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.logo {
+  max-width: 100%; /* Ensures the logo doesn't exceed the container width */
+  height: auto; /* Maintains aspect ratio */
+  width: 200px;
+  height:50px; /* Adjust as needed */
+  transition: width 0.3s ease; /* Smooth transition for resizing */
+}
+
+/* Optional: Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .logo {
+    width: 120px; /* Smaller logo on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 100px; /* Further reduce size for very small screens */
+  }
+}

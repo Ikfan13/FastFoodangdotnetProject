@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "lkIZZAzfxj4Z63rAki1i228J9Vq/Kq1srufC9D4UI8U=",
+  "Source": "FastFoodApi",
+  "BasePath": "_content/FastFoodApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FastFoodApi\\wwwroot",
+      "Source": "FastFoodApi",
+      "ContentRoot": "C:\\Users\\mohamedikfan.m\\Desktop\\angulardot\\FastFoodangdotnetProject\\FastFoodApi\\FastFoodApi\\wwwroot\\",
+      "BasePath": "_content/FastFoodApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\mohamedikfan.m\\Desktop\\angulardot\\FastFoodangdotnetProject\\FastFoodApi\\FastFoodApi\\wwwroot\\Images\\chickenpizza.jfif",
+      "SourceId": "FastFoodApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mohamedikfan.m\\Desktop\\angulardot\\FastFoodangdotnetProject\\FastFoodApi\\FastFoodApi\\wwwroot\\",
+      "BasePath": "_content/FastFoodApi",
+      "RelativePath": "Images/chickenpizza.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\chickenpizza.jfif"
+    }
+  ]
+}

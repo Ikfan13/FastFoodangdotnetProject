@@ -1,0 +1,69 @@
+<!-- manage-users.component.html -->
+<div class="mar">
+<div class="manage-users-container">
+    <h2 style="color: white;">Manage Users</h2>
+    <div *ngIf="loading">Loading...</div>
+    <div *ngIf="error">{{ error }}</div>
+    <div *ngIf="!loading && users.length > 0">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Contact Number</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.name }}</td>
+            <td>{{ user.dob | date: 'shortDate' }}</td>
+            <td>{{ user.contactNo }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <!-- <button (click)="editUser(user)">Update</button> -->
+              <button class="btn-delete" (click)="deleteUser(user.id)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #noUsers>
+      <p>No users found.</p>
+    </ng-template>
+  
+    <!-- Update User Form
+    <div *ngIf="isEditing" class="update-user-form">
+      <h3>Update User</h3>
+      <form (ngSubmit)="updateUser()">
+        <label>
+          Name:
+          <input [(ngModel)]="selectedUser.name" name="name" required />
+        </label>
+        <label>
+          Date of Birth:
+          <input [(ngModel)]="selectedUser.dob" name="dob" type="date" required />
+        </label>
+        <label>
+          Contact Number:
+          <input [(ngModel)]="selectedUser.contactNo" name="contactNo" required />
+        </label>
+        <label>
+          Username:
+          <input [(ngModel)]="selectedUser.username" name="username" required />
+        </label>
+        <label>
+          Email:
+          <input [(ngModel)]="selectedUser.email" name="email" type="email" required />
+        </label>
+        <!-- <button type="submit">Update</button> -->
+        <!-- <button type="button" (click)="cancelEdit()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>  -->

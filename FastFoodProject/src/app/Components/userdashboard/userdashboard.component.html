@@ -1,0 +1,63 @@
+<!-- Include Font Awesome CSS in your HTML file's <head> section -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<div class="mar">
+  <div class="dashboard-container">
+    <header class="header">
+      <button class="menu-button" (click)="toggleMenu()">
+        <i class="fas fa-bars"></i> <!-- Menu icon -->
+      </button>
+      <h1><img class="logo" src="/assets/images/logo.JPG"></h1>
+      <div class="button-group">
+        <button class="show-profile-button" (click)="showProfile()">
+          <i class="fas fa-user"></i> <!-- Show Profile icon -->
+        </button>
+        <button class="view-cart-button" (click)="goToCart()">
+          <i class="fas fa-shopping-cart"></i> <!-- View Cart icon -->
+        </button>
+        <button class="logout-button" (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i> <!-- Logout icon -->
+        </button>
+      </div>
+    </header>
+  
+    <div class="main-content">
+      <div class="sidebar" *ngIf="showMenu">
+        <nav class="nav-menu">
+          <ul>
+            <li>
+              <a (click)="filterItemsByType(null)" class="nav-button">Show All</a>
+            </li>
+            <li *ngFor="let type of foodTypes">
+              <a (click)="filterItemsByType(type)">{{ type }}</a>
+            </li>
+            <li>
+              <a (click)="goToOrders()">My Orders</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+  
+      <div class="content">
+        <!-- Food Items Section -->
+        <div class="food-items">
+          <div class="food-card" *ngFor="let item of filteredItems">
+            <img [src]="getImageUrl(item.imgUrl)" alt="{{ item.name }}" class="food-image">
+            <div class="food-info">
+              <h3>{{ item.name }}</h3>
+              <p>{{ item.description }}</p>
+              <p>${{ item.price.toFixed(2) }}</p>
+              <button class="add-to-cart-button" (click)="addToCart(item)">
+                <i class="fas fa-cart-plus"></i> <!-- Add to Cart icon -->
+                Add to Cart
+              </button>
+              <button class="order-now-button" (click)="orderNow(item)">
+                <i class="fas fa-check"></i> <!-- Order Now icon -->
+                Order Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

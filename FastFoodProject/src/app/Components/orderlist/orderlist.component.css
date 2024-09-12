@@ -1,0 +1,116 @@
+/* Ensure the background image covers the entire page */
+.mar {
+  background: url('/assets/images/background.jpg') center center no-repeat;
+  background-size: cover; /* Cover the entire container */
+  min-height: 100vh; /* Ensure it covers at least the viewport height */
+  background-attachment: fixed; /* Keep background fixed on scroll */
+  color: white;
+}
+
+/* Center container for orders */
+.orders-container {
+  max-width: 900px; /* Reduced width for smaller card size */
+  margin: 0 auto;
+  padding: 15px; /* Adjusted padding for smaller cards */
+}
+
+/* Center the header text */
+.orders-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff; /* Ensure header text is visible on background */
+}
+
+/* Style for individual order cards */
+.order-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px; /* Reduced padding for smaller card size */
+  margin-bottom: 15px; /* Reduced margin between cards */
+  transition: transform 0.2s ease;
+  display: flex; /* Ensure card layout aligns items properly */
+  flex-direction: column; /* Stack items vertically */
+}
+
+/* Hover effect for cards */
+.order-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Header section of each order card */
+.order-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Reduced margin between header and content */
+}
+
+/* Image styling */
+.order-image {
+  width: 80px; /* Reduced width */
+  height: 80px; /* Reduced height */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 10px; /* Reduced margin between image and text */
+}
+
+/* Information section of each order card */
+.order-info {
+  flex: 1;
+}
+
+/* Style for text in order-info */
+.order-info p {
+  margin: 0;
+  padding: 3px 0; /* Reduced padding for smaller text spacing */
+  color: black;
+}
+
+/* Style for strong tags in order-info */
+.order-info p strong {
+  display: inline-block;
+  width: 120px; /* Reduced width */
+}
+
+/* Status colors */
+.order-status-pending {
+  color: red;
+}
+
+.order-status-confirmed {
+  color: green;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .orders-container {
+    max-width: 100%; /* Full width on smaller screens */
+    padding: 10px; /* Adjusted padding for smaller screens */
+  }
+
+  .order-card {
+    padding: 8px; /* Further reduced padding for smaller screens */
+    margin-bottom: 10px; /* Further reduced margin between cards */
+  }
+
+  .order-image {
+    width: 70px; /* Further reduced width */
+    height: 70px; /* Further reduced height */
+  }
+
+  .order-info p strong {
+    width: 100px; /* Further reduced width */
+  }
+}
+
+@media (max-width: 480px) {
+  .order-image {
+    width: 60px; /* Reduced width */
+    height: 60px; /* Reduced height */
+  }
+
+  .order-info p strong {
+    width: 80px; /* Further reduced width */
+  }
+}

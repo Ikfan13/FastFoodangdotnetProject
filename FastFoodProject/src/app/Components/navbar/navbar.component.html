@@ -1,0 +1,29 @@
+<div class="page-wrapper">
+  <div class="nav-wrapper">
+    <div class="grad-bar"></div>
+    <nav class="navbar" [ngClass]="{'scrolled': isScrolled}">
+      <!-- Logo and Title -->
+      <div class="navbar-logo">
+        <img src="assets/images/logo.JPG" alt="Logo">
+        <span></span>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav">
+        <li class="nav-item"><a routerLink="/home">Home</a></li>
+        <li class="nav-item"><a routerLink="/menu">Menu</a></li>
+        <li class="nav-item"><a routerLink="/aboutus">About</a></li>
+        <li class="nav-item"><a routerLink="/contactus">Feedback</a></li>
+        <li class="nav-item"><a routerLink="/signup">SignUp</a></li>
+        <li class="nav-item"><a routerLink="/login">Login</a></li>
+      </ul>
+
+      <!-- Menu Toggle for Mobile -->
+      <div class="menu-toggle" id="mobile-menu" (click)="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </div>
+</div>

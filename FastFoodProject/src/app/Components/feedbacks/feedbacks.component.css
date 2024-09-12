@@ -1,0 +1,39 @@
+.contact-us-container {
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .feedback-table-container {
+    max-width: 800px;
+    margin: 40px auto;
+  }
+  
+  .feedback-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .feedback-table th,
+  .feedback-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .feedback-table th {
+    background-color: #007bff;
+  }
+  
+  .feedback-table td {
+    background-color: #fff;
+  }
+  
+  .mar{
+    background: url('/assets/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh; /* Ensures the background covers at least the full height of the viewport */
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column; 
+}
+  

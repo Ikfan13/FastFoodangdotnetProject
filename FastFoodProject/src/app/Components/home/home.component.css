@@ -1,0 +1,431 @@
+.homepage {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: url('/assets/images/background.jpg') no-repeat center center fixed;
+    background-size: cover; 
+    padding-top: 20px;
+}
+
+.header {
+    height: 100vh;
+    max-height: 900px;
+    background-size: cover;
+    min-height: 750px;
+    position: relative;
+    top: -20px;
+}
+
+.header .overlay {
+    height: 100%;
+    background: rgba(33, 37, 41, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header-title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    opacity: .8;
+    color: #343a40;
+}
+
+.header-mini {
+    min-height: 24rem;
+    height: 24rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    background: #ffa1b4 !important;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+.gallary {
+    margin: 0;
+}
+
+.gallary .gallary-item {
+    padding: 0;
+    border: 1px solid #343a40;
+    position: relative;
+}
+
+.gallary .gallary-item .gallary-img {
+    width: 100%;
+    height: 200px; /* Adjusted to ensure images are consistent */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+.gallary .gallary-item .gallary-overlay {
+    background: rgba(52, 58, 64, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 200px; /* Matches the image height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+.gallary .gallary-item:hover .gallary-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+.gallary .gallary-item .gallary-overlay .gallary-icon {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background: #007bff;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.middle-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+#featured {
+    padding: 50px;
+}
+
+#featured h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.card-group {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* Ensures images in cards are consistent */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 15px 0;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+#special-offers {
+    padding: 50px;
+}
+
+#special-offers h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#special-offers p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.offers-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.offers-list li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.testmonial-card {
+    position: relative;
+    text-align: center;
+}
+
+.testmonial-card .testmonial-title {
+    font-size: 1.85rem;
+}
+
+.testmonial-card .testmonial-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.testmonial-card .testmonial-body {
+    position: relative;
+    padding: 1rem;
+    border: 2px solid #495057;
+    border-top-color: #ff214f;
+    border-radius: 0.2rem;
+    margin-top: 30px;
+}
+
+.testmonial-card .testmonial-body:after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    border-color: #ff214f;
+    border-radius: 0.2rem 0 0 0;
+    border-style: solid;
+    border-width: 2px 0 0 2px;
+    transform: rotate(45deg) translateX(-50%);
+    background: #343a40;
+}
+
+.product-card {
+    text-align: center;
+}
+
+.product-img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px;
+}
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.marquee-content {
+    display: inline-flex;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee-content img {
+    border-radius: 8px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-50%, 0); 
+    }
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-map {
+        margin-right: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line if needed */
+    justify-content: center; /* Center align cards horizontally */
+    gap: 20px; /* Space between cards */
+    padding: 20px; /* Padding around the container */
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    border: 1px solid #495057;
+    border-radius: 0.2rem;
+    height: 480px;
+    width: 350px;
+}
+
+.card > hr {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.card > .list-group:first-child .list-group-item:first-child {
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+}
+
+.card > .list-group:last-child .list-group-item:last-child {
+    border-bottom-right-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-title {
+    margin-bottom: 0.75rem;
+}
+
+.card-subtitle {
+    margin-top: -0.375rem;
+    margin-bottom: 0;
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
+.card-link:hover {
+    text-decoration: none;
+}
+
+.card-link + .card-link {
+    margin-left: 1.25rem;
+}
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid #495057;
+}
+
+.card-header:first-child {
+    border-radius: calc(0.2rem - 1px) calc(0.2rem - 1px) 0 0;
+}
+
+.card-header + .list-group .list-group-item:first-child {
+    border-top: 0;
+}
+
+.card-footer {
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid #495057;
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 calc(0.2rem - 1px) calc(0.2rem - 1px);
+}
+
+.card-header-tabs {
+    margin-right: -0.625rem;
+    margin-bottom: -0.75rem;
+    margin-left: -0.625rem;
+    border-bottom: 0;
+}
+
+/* Ensure card sizes are consistent */
+
+
+/* Ensure the card image is consistent */
+.card img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    border-bottom: 1px solid #495057; /* Border below the image for separation */
+}
+
+/* Card body adjustments */
+.card-body {
+    padding: 1.25rem;
+    flex: 1; /* Allows the content to fit within the card */
+}
+
+/* Card title and text adjustments */
+.card-title {
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem; /* Adjust font size if needed */
+}
+
+.card-text {
+    font-size: 1rem; /* Adjust font size if needed */
+    margin-bottom: 0;
+}
+
+/* Ensure card footer fits well */
+.card-footer {
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid #495057;
+}
+
+/* For event-specific cards */
+.event-card {
+    background-color: #f8f9fa; /* Light background for event cards */
+    border-color: #e9ecef; /* Border color for event cards */
+}
+
+.event-card img {
+    height: 180px; /* Consistent height for event images */
+}
+
+.event-card .card-body {
+    padding: 1rem; /* Adjust padding for event card content */
+}
+
+.event-card .card-title {
+    font-size: 1.5rem; /* Adjust font size for event titles */
+}
+
+.event-card .card-text {
+    font-size: 0.9rem; /* Adjust font size for event details */
+}

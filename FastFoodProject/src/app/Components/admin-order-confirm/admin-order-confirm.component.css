@@ -1,0 +1,100 @@
+.orders-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+    
+
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.order-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin: 10px;
+  flex: 1 1 300px; /* Grow and shrink with a minimum width of 300px */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+.order-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.order-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+  width: 100%;
+  max-width: 100%; /* Ensure it doesn't exceed the parent container */
+  box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+}
+
+.order-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.order-info {
+  margin-top: 10px;
+}
+
+.order-info p {
+  margin: 5px 0;
+}
+
+.order-info span {
+  font-weight: bold;
+}
+
+.order-status-pending {
+  color: red;
+}
+
+.order-status-confirmed {
+  color: green;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Flexbox container to ensure responsive layout */
+.order-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Space between cards */
+}
+
+.mar{ 
+  background: url('/assets/images/background.jpg') no-repeat center center fixed;
+  background-size: cover; 
+  padding-top: 20px;
+  color: white;
+}

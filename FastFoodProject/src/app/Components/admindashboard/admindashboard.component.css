@@ -1,0 +1,116 @@
+/* admindashboard.component.css */
+
+.dashboard-container {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+.menu-button, .logout-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.menu-button:hover, .logout-button:hover {
+  background-color: #0056b3;
+}
+
+.main-content {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin: 10px 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-menu a:hover {
+  color: #007bff;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stat-box h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.stat-box p {
+  font-size: 2rem;
+  margin: 10px 0 0;
+  color: #007bff;
+}
+
+.chart-container {
+  background-color: #333; /* Dark background for the chart container */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for better visibility */
+  margin-bottom: 20px; /* Add spacing if needed */
+  max-width: 800px; /* Limit the width of the chart container */
+  margin: 0 auto; /* Center the container */
+}
+
+.chart-container canvas {
+  display: block; /* Ensures the canvas element fits well */
+  width: 100%; /* Makes sure the canvas takes full width of the container */
+  height: 300px; /* Set the height for the chart */
+}
+
+.mar{
+  background: url("/assets/images/background.jpg");
+  height: 100vh;
+}
+
+.logo {
+  max-width: 100%; /* Ensures the logo doesn't exceed the container width */
+  height: auto; /* Maintains aspect ratio */
+  width: 200px;
+  height:50px; /* Adjust as needed */
+  transition: width 0.3s ease; /* Smooth transition for resizing */
+}

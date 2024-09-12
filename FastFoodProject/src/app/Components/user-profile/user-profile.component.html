@@ -1,0 +1,63 @@
+<!-- user-profile.component.html -->
+<div class="mar">
+<div class="user-profile-container">
+    <div class="profile-box">
+      <h2 class="dashboard-heading">User Profile</h2>
+      
+      <form *ngIf="userDetails">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input id="name" [value]="userDetails.name" readonly />
+        </div>
+        <div class="form-group">
+          <label for="contactNo">Contact Number:</label>
+          <input id="contactNo" [value]="userDetails.contactNo" readonly />
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input id="dob" [value]="userDetails.dob | date:'yyyy-MM-dd'" readonly />
+        </div>
+        <div class="form-group">
+          <label for="email">Email ID:</label>
+          <input id="email" [value]="userDetails.email" readonly />
+        </div>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input id="username" [value]="userDetails.username" readonly />
+        </div>
+        
+        <button (click)="editProfile()">Edit</button>
+        <button (click)="deleteProfile()">Delete</button>
+      </form>
+  
+      <div *ngIf="isEditing" class="edit-form">
+        <!-- Edit Form -->
+        <form (ngSubmit)="updateProfile()">
+          <div class="form-group">
+            <label for="editName">Name:</label>
+            <input id="editName" [(ngModel)]="userDetails.name" name="name" />
+          </div>
+          <div class="form-group">
+            <label for="editContactNo">Contact Number:</label>
+            <input id="editContactNo" [(ngModel)]="userDetails.contactNo" name="contactNo" />
+          </div>
+          <div class="form-group">
+            <label for="editDob">Date of Birth:</label>
+            <input id="editDob" [(ngModel)]="userDetails.dob" name="dob" type="date" />
+          </div>
+          <div class="form-group">
+            <label for="editEmail">Email ID:</label>
+            <input id="editEmail" [(ngModel)]="userDetails.email" name="email" />
+          </div>
+          <div class="form-group">
+            <label for="editUsername">Username:</label>
+            <input id="editUsername" [(ngModel)]="userDetails.username" name="username" />
+          </div>
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  
+    <button (click)="logout()" class="logout-button">Logout</button>
+  </div>
+</div>

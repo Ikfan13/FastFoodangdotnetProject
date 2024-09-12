@@ -1,0 +1,52 @@
+<!-- admindashboard.component.html -->
+ <div class="mar">
+<div class="dashboard-container">
+  <header class="header">
+    <button class="menu-button" (click)="toggleMenu()">
+      <i class="fas fa-bars"></i> <!-- Menu icon -->
+    </button>
+    <h1><img class="logo" src="/assets/images/logo.JPG"></h1>
+    <button class="logout-button" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> <!-- Logout icon -->
+    </button>
+  </header>
+
+  <div class="main-content">
+    <div class="sidebar" *ngIf="showMenu">
+      <nav class="nav-menu">
+        <ul>
+          <li *ngFor="let item of fastFoodItems">
+            <a [routerLink]="item.link">{{ item.name }}</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="content">
+      <!-- Statistics Section -->
+      <div class="statistics">
+        <div class="stat-box">
+          <h3>Total Items</h3>
+          <p>{{ totalItems }}</p>
+        </div>
+        <div class="stat-box">
+          <h3>Total Users</h3>
+          <p>{{ totalUsers }}</p>
+        </div>
+        <div class="stat-box">
+          <h3>Total Orders</h3>
+          <p>{{ totalOrders }}</p>
+        </div>
+      </div>
+      
+      <!-- Chart Section -->
+      <div class="chart-container">
+        <canvas id="userChart"></canvas>
+      </div>
+      
+      <!-- Optional router outlet -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<div class="mar">
+<h1 class="page-heading">Sign Up</h1>
+
+<div class="signup-container">
+    <div class="icon-container">
+      <i class="fas fa-user-plus fa-3x"></i> <!-- Example icon -->
+    </div>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form">
+      <div class="form-group">
+        <label class="text-color" for="name">Name</label>
+        <input id="name" formControlName="name" type="text" class="form-control" placeholder="Name" />
+        <div class="alert alert-danger" *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.invalid">
+          <div *ngIf="signupForm.get('name')?.errors?.['required']">This field is required</div>
+          <div *ngIf="signupForm.get('name')?.errors?.['pattern']">Name must be 3-20 characters long and contain only letters</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="text-color" for="dob">Date of Birth</label>
+        <input id="dob" formControlName="dob" type="date" class="form-control" />
+        <div class="alert alert-danger" *ngIf="signupForm.get('dob')?.touched && signupForm.get('dob')?.invalid">
+          <div *ngIf="signupForm.get('dob')?.errors?.['required']">This field is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="text-color" for="contactNumber">Contact Number</label>
+        <input id="contactNumber" formControlName="contactNumber" type="text" class="form-control" placeholder="Contact Number" />
+        <div class="alert alert-danger" *ngIf="signupForm.get('contactNumber')?.touched && signupForm.get('contactNumber')?.invalid">
+          <div *ngIf="signupForm.get('contactNumber')?.errors?.['required']">This field is required</div>
+          <div *ngIf="signupForm.get('contactNumber')?.errors?.['pattern']">Contact number must be 10 digits long</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="text-color" for="username">Username</label>
+        <input id="username" formControlName="username" type="text" class="form-control" placeholder="Username" />
+        <div class="alert alert-danger" *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.invalid">
+          <div *ngIf="signupForm.get('username')?.errors?.['required']">This field is required</div>
+          <div *ngIf="signupForm.get('username')?.errors?.['pattern']">Username must be 4-15 characters long and can contain letters, numbers, and underscores</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="text-color" for="email">Email</label>
+        <input id="email" formControlName="email" type="email" class="form-control" placeholder="Email" />
+        <div class="alert alert-danger" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid">
+          <div *ngIf="signupForm.get('email')?.errors?.['required']">This field is required</div>
+          <div *ngIf="signupForm.get('email')?.errors?.['email']">Please enter a valid email address</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="text-color" for="password">Password</label>
+        <input id="password" formControlName="password" type="password" class="form-control" placeholder="Password" />
+        <div class="alert alert-danger" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
+          <div *ngIf="signupForm.get('password')?.errors?.['required']">This field is required</div>
+          <div *ngIf="signupForm.get('password')?.errors?.['pattern']">Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character</div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Sign Up</button>
+      <div class="login-link">
+        <span>Already have an account?</span> <a routerLink="/login">Click here to login</a>
+      </div>
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>

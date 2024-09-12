@@ -1,0 +1,49 @@
+.mar{
+    background: url('/assets/images/background.jpg') no-repeat center center fixed;
+    background-size: cover; 
+    padding-top: 20px;
+    color: white;
+}
+    
+.contact-us-container {
+    margin-top: 60px; /* Adjust the value as needed */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+    
+    
+    .contact-us-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    }
+    
+    .form-group {
+    margin-bottom: 15px;
+    }
+    
+    .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+    
+    .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+    
+    .btn:hover {
+    background-color: #0056b3;
+    }

@@ -1,0 +1,81 @@
+<header class="header">
+  <h1>Menu Items</h1>
+  <button class="logout-button" (click)="logout()">Logout</button>
+</header>
+<div class="mar">
+  <div class="manage-items-container">
+    <!-- Navigation bar for food types -->
+    <div class="food-type-nav">
+      <button *ngFor="let type of foodTypes" 
+              [class.active]="selectedFoodType === type" 
+              (click)="filterItemsByType(type)" 
+              class="nav-button">
+        {{ type }}
+      </button>
+      <button [class.active]="selectedFoodType === null" 
+              (click)="filterItemsByType(null)" 
+              class="nav-button">
+        Show All
+      </button>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-content">
+      <button class="add-button" (click)="toggleAddItemForm()">Add New Item</button>
+
+      <!-- Add/Edit Item Form -->
+      <form *ngIf="showAddItemForm" class="item-form" (ngSubmit)="addOrUpdateItem()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" [(ngModel)]="newItem.name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" [(ngModel)]="newItem.description" name="description" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="number" id="price" [(ngModel)]="newItem.price" name="price" required />
+        </div>
+
+        <div class="form-group">
+          <label for="imgUrl">Image URL</label>
+          <input type="text" id="imgUrl" [(ngModel)]="newItem.imgUrl" name="imgUrl" required />
+        </div>
+
+        <div class="form-group">
+          <label for="foodType">Food Type</label>
+          <input type="text" id="foodType" [(ngModel)]="newItem.foodType" name="foodType" required />
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="save-button">{{ editingItem ? 'Update Item' : 'Add Item' }}</button>
+          <button type="button" class="cancel-button" (click)="toggleAddItemForm()">Cancel</button>
+        </div>
+      </form>
+
+      <!-- Food Items List -->
+      <div class="food-items-container">
+        <div class="food-item-card" *ngFor="let item of filteredItems">
+          <img [src]="getImageUrl(item.imgUrl)" alt="{{ item.name }}" class="item-image" />
+          <div class="item-details">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <p><strong>Price:</strong> ${{ item.price }}</p>
+            <p><strong>Type:</strong> {{ item.foodType }}</p>
+          </div>
+          <div class="item-actions">
+            <button class="edit-button" (click)="toggleAddItemForm(item)">
+              <i class="fas fa-edit"></i>
+              Edit</button>
+            <button class="delete-button" (click)="deleteItem(item.id)">
+              <i class="fas fa-trash"></i>
+              Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

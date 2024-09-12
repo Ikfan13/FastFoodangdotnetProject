@@ -1,0 +1,21 @@
+<div class="mar">
+<div class="feedback-table-container">
+    <h2 style="color:white;">Submitted Feedbacks</h2>
+    <table class="feedback-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Feedback</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let feedback of feedbacks">
+          <td>{{ feedback.name }}</td>
+          <td>{{ feedback.email }}</td>
+          <td>{{ feedback.feedbackText }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
